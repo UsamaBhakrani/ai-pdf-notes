@@ -9,8 +9,8 @@ const SideBar = () => {
     <div className="h-screen shadow-md p-7">
       <Image
         src={"/logo.svg"}
-        width={100}
-        height={100}
+        width={200}
+        height={120}
         alt="Lorem Ipsum Logo"
       />
       <div className="mt-10">
