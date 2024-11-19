@@ -57,8 +57,8 @@ const UploadPdfDialog = ({ children }) => {
         fileId,
         createdBy: user.primaryEmailAddress.emailAddress,
         fileName:
-          fileName ??
-          `Untitled File from ${user.primaryEmailAddress.emailAddress}`,
+          fileName == "" &&
+          `Untitled_File_from_${user.primaryEmailAddress.emailAddress}`,
       });
 
       setLoading(false);
