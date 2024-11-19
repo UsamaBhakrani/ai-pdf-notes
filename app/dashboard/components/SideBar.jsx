@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Layout, Shield } from "lucide-react";
 import Image from "next/image";
+import UploadPdfDialog from "./UploadPdfDialog";
 
 const SideBar = () => {
   return (
@@ -13,7 +14,9 @@ const SideBar = () => {
         alt="Lorem Ipsum Logo"
       />
       <div className="mt-10">
-        <Button className="w-full">+ Upload PDF</Button>
+        <UploadPdfDialog>
+          <Button className="w-full">+ Upload PDF</Button>
+        </UploadPdfDialog>
         <div className="flex items-center gap-2 p-5 mt-5 rounded-lg cursor-pointer hover:bg-slate-100">
           <Layout />
           <h2 className="">Workspace</h2>
