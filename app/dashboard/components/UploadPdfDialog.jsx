@@ -16,6 +16,7 @@ import { useMutation } from "convex/react";
 import { useState } from "react";
 import Spinner from "./Spinner";
 import { useUser } from "@clerk/nextjs";
+import axios from "axios";
 
 const UploadPdfDialog = ({ children }) => {
   const [file, setFile] = useState(null);
@@ -60,6 +61,10 @@ const UploadPdfDialog = ({ children }) => {
           fileName == "" &&
           `Untitled_File_from_${user.primaryEmailAddress.emailAddress}`,
       });
+
+      // API POST
+
+      const apiResponse = await axios.get("/api/pdf-loader");
 
       setLoading(false);
       setFile(null);
