@@ -26,6 +26,7 @@ const UploadPdfDialog = ({ children }) => {
   const generateUploadUrl = useMutation(api.pdfStorage.generateUploadUrl);
   const addFileEntryToDb = useMutation(api.pdfStorage.addFileEntryToDb);
   const getFileUrl = useMutation(api.pdfStorage.getFileUrl);
+  const embedDocuments = useMutation(api.myActions.embedDocuments);
 
   const { user } = useUser();
 
@@ -62,9 +63,11 @@ const UploadPdfDialog = ({ children }) => {
           `Untitled_File_from_${user.primaryEmailAddress.emailAddress}`,
       });
 
-      // API POST
-
+      // Get the PDF Splitted Data in Text Format
       const apiResponse = await axios.get("/api/pdf-loader");
+      // const embedding = embedDocuments(apiResponse.data.result)
+      // console.log(apiResponse.data.result);
+      embedDocuments({});
 
       setLoading(false);
       setFile(null);
