@@ -58,10 +58,8 @@ const UploadPdfDialog = ({ children }) => {
         storageId,
         fileUrl,
         fileId,
-        createdBy: user.primaryEmailAddress.emailAddress,
-        fileName:
-          fileName == "" &&
-          `Untitled_File_from_${user.primaryEmailAddress.emailAddress}`,
+        createdBy: user?.primaryEmailAddress?.emailAddress,
+        fileName: fileName,
       });
 
       // Get the PDF Splitted Data in Text Format

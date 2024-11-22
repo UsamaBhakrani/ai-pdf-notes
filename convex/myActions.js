@@ -19,7 +19,7 @@ export const embedDocuments = action({
         model: "text-embedding-004", // 768 dimensions
         taskType: TaskType.RETRIEVAL_DOCUMENT,
         title: "Document title",
-        apiKey: `${API_KEY}`,
+        apiKey: API_KEY,
       }),
       { ctx }
     );
