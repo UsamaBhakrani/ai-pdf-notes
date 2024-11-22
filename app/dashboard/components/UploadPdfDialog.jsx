@@ -72,11 +72,9 @@ const UploadPdfDialog = ({ children }) => {
       });
 
       setLoading(false);
-      setFile(null);
-      setFileName("");
     } catch (error) {
       setLoading(false);
-      setFile(false);
+      setFile(null);
       setFileName("");
       toast.error("Error Uploading file");
       console.log(error, "Error Uploading file");
