@@ -17,6 +17,7 @@ import { useState } from "react";
 import Spinner from "./Spinner";
 import { useUser } from "@clerk/nextjs";
 import axios from "axios";
+import { toast } from "sonner";
 
 const UploadPdfDialog = ({ children }) => {
   const [file, setFile] = useState(null);
@@ -77,6 +78,7 @@ const UploadPdfDialog = ({ children }) => {
       setLoading(false);
       setFile(false);
       setFileName("");
+      toast.error("Error Uploading file");
       console.log(error, "Error Uploading file");
     }
   };
