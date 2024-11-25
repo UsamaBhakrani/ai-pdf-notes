@@ -18,6 +18,7 @@ const TextEditor = () => {
         class: "focus:outline-none h-screen p-5",
       },
     },
+    immediatelyRender: false,
   });
 
   return (
